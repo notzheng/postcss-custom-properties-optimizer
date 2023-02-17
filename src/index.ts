@@ -1,4 +1,4 @@
-import { Plugin } from 'postcss';
+import { PluginCreator } from 'postcss';
 
 import { CustomPropertiesStats } from './stats';
 
@@ -17,7 +17,7 @@ import { DEFAULT_OPTIONS, Options } from './options';
  * 2. Rename custom properties to shorter name
  *
  */
-export default (options: Options = DEFAULT_OPTIONS): Plugin => {
+const PostCSSCustomPropertiesOptimizer: PluginCreator<Options> = (options = DEFAULT_OPTIONS) => {
   return {
     postcssPlugin: 'postcss-custom-properties',
 
@@ -95,6 +95,6 @@ export default (options: Options = DEFAULT_OPTIONS): Plugin => {
   };
 };
 
-export const postcss = true;
+PostCSSCustomPropertiesOptimizer.postcss = true;
 
-export type { Options } from './options';
+export = PostCSSCustomPropertiesOptimizer;

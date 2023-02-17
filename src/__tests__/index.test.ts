@@ -1,4 +1,4 @@
-import Plugin from '..';
+import Plugin = require('..');
 import { Options } from '../options';
 import postcss from 'postcss';
 import { join } from 'node:path';

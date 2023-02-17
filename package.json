@@ -8,13 +8,12 @@
     "postcss-plugin",
     "postcss-custom-properties-optimizer"
   ],
-  "main": "lib/main.js",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "source": "src/index.ts",
-  "module": "lib/module.js",
   "scripts": {
     "clean": "rimraf ./lib",
-    "build": "parcel build",
+    "build": "parcel build --no-source-maps",
     "format": "prettier --write \"src/**/*.(js|ts)\"",
     "lint": "eslint src --ext .js,.ts",
     "lint:fix": "eslint src --fix --ext .js,.ts",
