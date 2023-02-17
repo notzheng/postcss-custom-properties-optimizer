@@ -1,0 +1,22 @@
+.prefix {
+    --0: #aaa;
+    --1: #bbb;
+    --2: #fff;
+    --3: #ddd;
+    --colo-f: var(--3);
+}
+
+.single {
+    --4: 1px;
+    --margin: 1px;
+    --padding: 1px;
+    --5: var(--4);
+}
+
+.app {
+    color: var(--0);
+    background-color: var(--1);
+    margin: var(--margin);
+    border: var(--2) solid var(--5);
+}
+

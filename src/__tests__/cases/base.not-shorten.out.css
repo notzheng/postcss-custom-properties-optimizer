@@ -1,0 +1,23 @@
+:root {
+    --color: #000;
+    --background: #111;
+    --space: 2px;
+    --space-2x: calc(var(--space) * 2);;
+    --margin-default: var(--space-2x);
+}
+
+.app {
+    color: var(--color);
+    background-color: var(--outside-property);
+}
+
+.header {
+    --border: var(--space) solid var(--background);
+    border-bottom: var(--border);
+    color: var(--color);
+}
+
+
+.main {
+    margin: var(--margin-default);
+}

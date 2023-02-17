@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    branches: main
+
+jobs:
+  release:
+    name: Release
+
+    if: github.repository == 'notzheng/postcss-custom-properties-optimizer'
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: true
+
+      - name: Clean
+        run: pnpm clean
+
+      - name: Build
+        run: pnpm build
+
+      - name: Type Check
+        run: pnpm run types:check
+
+      - name: Create Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpx semantic-release

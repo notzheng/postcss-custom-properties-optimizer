@@ -1,0 +1,23 @@
+:root {
+    --0: #000;
+    --1: #111;
+    --2: 2px;
+    --3: calc(var(--2) * 2);;
+    --4: var(--3);
+}
+
+.app {
+    color: var(--0);
+    background-color: var(--outside-property);
+}
+
+.header {
+    --5: var(--2) solid var(--1);
+    border-bottom: var(--5);
+    color: var(--0);
+}
+
+
+.main {
+    margin: var(--4);
+}
