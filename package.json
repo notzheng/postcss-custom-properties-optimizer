@@ -18,7 +18,6 @@
     "format": "prettier --write \"src/**/*.(js|ts)\"",
     "lint": "eslint src --ext .js,.ts",
     "lint:fix": "eslint src --fix --ext .js,.ts",
-    "prepublishOnly": "pnpm build",
     "test": "jest",
     "types:check": "tsc --noEmit",
     "prepare": "husky install"
