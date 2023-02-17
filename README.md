@@ -15,7 +15,7 @@ This plugin can do these things:
 - Remove unused custom properties
 - Rename custom properties to shorter name (e.g. `--color-fg-default` to `--0`)
 
-Because things above is not safe, use it at your own risk.
+Because of things above are not safe, use it at your own risk.
 
 ## Usage
 
