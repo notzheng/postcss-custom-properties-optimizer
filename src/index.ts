@@ -97,4 +97,6 @@ const PostCSSCustomPropertiesOptimizer: PluginCreator<Options> = (options = DEFA
 
 PostCSSCustomPropertiesOptimizer.postcss = true;
 
-export = PostCSSCustomPropertiesOptimizer;
+export default PostCSSCustomPropertiesOptimizer;
+
+export type { Options, OptionsWithExclude, OptionsWithInclude } from './options';

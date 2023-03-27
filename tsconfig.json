@@ -1,16 +1,20 @@
 {
   "compilerOptions": {
+    "moduleResolution": "node",
+    "allowJs": false,
     "target": "ESNext",
-    "module": "commonjs",
+    "lib": [
+      "ESNext"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "module": "ESNext",
     "declaration": true,
-    "outDir": "./lib",
-    "strict": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "Node"
+    "useUnknownInCatchVariables": false,
+    "outDir": "lib",
+    "strict": true
   },
   "include": [
-    "src"
+    "./src/**/*"
   ],
   "exclude": [
     "node_modules",

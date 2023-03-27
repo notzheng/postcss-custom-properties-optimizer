@@ -1,6 +1,11 @@
 name: Running Code Coverage
 
-on: [ push, pull_request ]
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   build:
@@ -26,6 +31,15 @@ jobs:
 
       - name: Run the tests
         run: pnpm test -- --coverage
+
+      - name: Clean
+        run: pnpm clean
+
+      - name: Build
+        run: pnpm build
+
+      - name: Type Check
+        run: pnpm run types:check
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
